@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Nooro_WeatherApp: App {
+    @StateObject private var storege = CityStorageService()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .applyDefaultFont()
+                .environmentObject(storege)
+            
         }
     }
 }
